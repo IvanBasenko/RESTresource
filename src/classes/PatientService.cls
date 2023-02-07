@@ -6,7 +6,7 @@ public with sharing class PatientService {
         if (String.isNotBlank(temperature)) {
             patient.Temperature__c = Decimal.valueOf(temperature);
         }
-        if (String.isNotBlank(temperature)) {
+        if (String.isNotBlank(pulse)) {
             patient.Pulse__c = Decimal.valueOf(pulse);
         }
         update patient;
