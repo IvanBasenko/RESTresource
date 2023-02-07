@@ -198,7 +198,7 @@
         <fullName>Temperature__c</fullName>
         <externalId>false</externalId>
         <label>Temperature</label>
-        <precision>3</precision>
+        <precision>4</precision>
         <required>false</required>
         <scale>1</scale>
         <trackTrending>false</trackTrending>
