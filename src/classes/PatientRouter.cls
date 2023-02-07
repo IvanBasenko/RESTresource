@@ -1,6 +1,7 @@
 public with sharing class PatientRouter extends RestRoute {
 
-    private static final PatientSelector selector = new PatientSelector();
+    private static PatientSelector selector = new PatientSelector();
+    private static PatientService service = new PatientService();
 
     protected override Object doGet() {
         if (!String.isEmpty(this.resourceId)) {
@@ -17,10 +18,7 @@ public with sharing class PatientRouter extends RestRoute {
                 request.requestBody.toString()
         );
         Patient__c patient = new Patient__c(Id = this.resourceId);
-        patient.Temperature__c = (Decimal) body.get('temperature');
-        patient.Pulse__c = (Decimal) body.get('pulse');
-        update patient;
-        
+        service.updatePatientData(patient, body);
         return patient;
     }
 
